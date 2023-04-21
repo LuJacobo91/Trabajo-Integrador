@@ -115,6 +115,7 @@
     left: 315px;
     top: 1489px;
 
+
 }
 .box-4 {
 	background-color:#263238;
@@ -123,10 +124,12 @@
     height: 673px;
     left: 0px;
     top: 2044px;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
 }
 .text-5 {
 	color:#FFFFFF;
-	position: absolute;
     width: 491px;
     height: 108px;
     left: 474px;
@@ -139,6 +142,11 @@
     line-height: 54px;
     text-align: center;
 
+}
+.formulario{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .footer-back { 
