@@ -1,0 +1,94 @@
+.container-header { 
+	overflow:hidden;
+}
+
+
+
+.fondo-header { 
+	background-color:rgba(198, 255, 0, 1);
+	width:1440px;
+	height:83px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.logo-header { 
+	width:250px;
+	height:45px;
+	position:absolute;
+	left:207px;
+	top:20px;
+	background-image:url(/Images/Logo_MusicNow_Desktop.png);
+    background-repeat:no-repeat;
+	background-size:contain;
+}
+
+.links-container { 
+    font-family:Poppins;
+	width:599px;
+	height:32px;
+	position:absolute;
+	left:641px;
+	top:26px;
+}
+
+.links-2 { 
+	width:599px;
+	height:32px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.link-inicio { 
+	color:rgba(0, 0, 0, 1);
+	width:114px;
+	height:24px;
+	position:absolute;
+	left:0px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-repro { 
+	color:rgba(0, 0, 0, 1);
+	width:149px;
+	height:24px;
+	position:absolute;
+	left:138px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-quienes { 
+	color:rgba(0, 0, 0, 1);
+	width:172px;
+	height:24px;
+	position:absolute;
+	left:311px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-contacto { 
+	
+	width:92px;
+	height:32px;
+	position:absolute;
+	left:507px;
+	top:4px;
+	border-top-left-radius:22px;
+	border-top-right-radius:22px;
+	border-bottom-left-radius:22px;
+	border-bottom-right-radius:22px;
+}
