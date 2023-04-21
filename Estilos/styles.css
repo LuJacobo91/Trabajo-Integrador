@@ -90,6 +90,7 @@
 	position:absolute;
     
 }
+<<<<<<< HEAD
 .box-3{
 	position: absolute;
     width: 1440px;
@@ -150,11 +151,17 @@
 		color: rgb(116, 233, 70);
 }
 
+=======
+>>>>>>> abdb5132748bb0fafedf45c26d0ae6b3b52594f0
 
 .footer-back { 
     background-color:rgba(10.625000316649675, 10.625000316649675, 10.625000316649675, 1);
 	width:1440px;
+<<<<<<< HEAD
 	height:170px;
+=======
+	height:147px;
+>>>>>>> abdb5132748bb0fafedf45c26d0ae6b3b52594f0
 	position:absolute;
 	left:0px;
 	top:2717px;
@@ -196,6 +203,7 @@
 	position:absolute;
 	left:73px;
 }
+<<<<<<< HEAD
 
 .copyright{ 
 		color:rgba(255, 255, 255, 1);
@@ -208,3 +216,5 @@
 		text-align:left;
 		font-size:10px;
 		letter-spacing:0;}
+=======
+>>>>>>> abdb5132748bb0fafedf45c26d0ae6b3b52594f0
