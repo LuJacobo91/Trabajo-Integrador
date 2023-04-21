@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-qbhYF9XOzjAeNQZ3lNsoNcJLwzO+/ApgyI8M1WfY9tS0SjI0vB8dZdlz1Kj81w4Bn5PxK8JhfhH+KV/e7p/d5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-qbhYF9XOzjAeNQZ3lNsoNcJLwzO+/ApgyI8M1WfY9tS0SjI0vB8dZdlz1Kj81w4Bn5PxK8JhfhH+KV/e7p/d5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Estilos/header.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title>Reproductor</title>
+    <script src="https://api.jamendo.com/v3.0/"></script>
+    <script src="index.js"></script>
+
+
 </head>
+
 <body>
     <header>
+    <!-- <header>
 
         <div class="container-header">
             <div class="fondo-header"></div>
@@ -22,8 +32,27 @@
                         <a href="QuienesSomos.html" class="link-quienes">Quienes Somos</a>
                         <a href="Contacto.html" class="link-contacto">Contacto</a>
                  </div>
+                    <a href="index.html" target="_blank" class="link-inicio">Inicio</a>
+                    <a href="Reproductor.html" class="link-repro"> Reproductor</a>
+                    <a href="QuienesSomos.html" class="link-quienes">Quienes Somos</a>
+                    <a href="Contacto.html" class="link-contacto">Contacto</a>
+                </div>
             </div>
         </div>
     </header>
+    </header> -->
+
+    <section>
+        <h2>Reproductor de música</h2>
+        <div id="tracks">Canciones</div>
+        <audio id="player"></audio>
+        <div id="player-content"></div>
+        <button id="playBtn">Play</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="prevBtn">Anterior</button>
+        <button id="nextBtn">Siguiente</button>
+    </section>
+
 </body>
+
 </html>
