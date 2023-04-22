@@ -57,7 +57,39 @@
     line-height:1.8;
 }
 
-
+.caja-2 { 
+	width:1440px;
+	height: 1500px;
+    position: absolute;
+    left: 0px;
+    top: 1100px;
+	font-family: Poppins;
+    background-color:rgba(198.00000339746475, 255, 0, 1);
+	
+}
+.text-caja2{
+    color:rgba(38, 50, 56, 1);
+	width:491px;
+	height:108px;
+	position:absolute;
+	left:100px;
+	top: 50px;
+	font-family:Poppins;
+	text-align: left;
+	font-size:40px;
+	letter-spacing:0;
+}
+.dispositivos{
+    background-image: url(/Images/across-devices.542783a.png);
+    background-color:rgba(198.00000339746475, 255, 0, 1);
+	width:980px;
+	height:800px;
+	position:relative;
+	left:400px;
+	top:60px;
+    border-radius: 10px;
+    
+}
 
 
 /* formulario */
