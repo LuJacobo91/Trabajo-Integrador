@@ -1,0 +1,54 @@
+.caja-1 { 
+	background-color:#263238;
+    width:100%;
+	height:100%;
+	position:absolute;
+    font-family: Poppins;}
+
+    .text-footer { 
+        color:rgba(255, 255, 255, 1);
+        width:390px;
+        height:30px;
+        position:absolute;
+        left:220px;
+        top:59px;
+        font-family:Poppins;
+        text-align:left;
+        font-size:20px;
+        letter-spacing:0;
+    }
+    .icon-position { 
+        width:20px;
+        height:20px;
+        position:absolute;
+        left:474px;
+        top:63px;
+    }
+    .icon-instagram { 
+        width:20px;
+        height:20px;
+        position:absolute;
+    }
+    .icon-twitter { 
+        width:20px;
+        height:20px;
+        position:absolute;
+        left:36px;
+    }
+    .icon-youtube{ 
+        width:20px;
+        height:20px;
+        position:absolute;
+        left:73px;
+    }
+    .copyright{ 
+        color:rgba(255, 255, 255, 1);
+        width:390px;
+        height:30px;
+        position:absolute;
+        left:150px;
+        top:59px;
+        font-family:Poppins;
+        text-align:left;
+        font-size:10px;
+        letter-spacing:0;}
