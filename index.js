@@ -1,5 +1,8 @@
+
 // Obtener el elemento donde se mostrarán las canciones
 const tracksContainer = document.getElementById('tracks');
+
+
 
 // Obtener el reproductor de audio
 const player = document.getElementById('player');
