@@ -1,0 +1,337 @@
+.body{
+    background-color: black;
+}
+
+.links-container { 
+    font-family:'Poppins';
+	width:100%;
+	height: 10px;
+	position:absolute;
+	left:33%;
+	top:5%;
+}
+
+@media screen and (max-width: 375px) {
+	.links-container {
+	display: none;
+	}
+}
+
+.background{ 
+    width:100%;
+    height: 150vh;
+	background-color:rgba(10, 10, 10,1);
+	position:absolute;
+	left:0px;
+	top:15%;
+    object-fit: cover;
+}
+
+.text-colabora{
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 375px) {
+	.text-colabora {
+	font-size:32px;
+    }
+}
+
+.image__phone{
+    height: 400px;
+    position: relative;
+    justify-content: center;
+}
+
+@media screen and (max-width: 375px) {
+	.image__phone {
+	height: 300px;
+    }
+}
+
+.columna_monto{
+    align-content: center;
+    align-items: stretch;
+}
+
+@media screen and (max-width: 375px) {
+	.columna_monto {
+        -webkit-flex-direction: column;
+        display: block;
+        flex-direction: column;
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 375px) {
+	.donar__form {
+	flex-wrap: wrap;
+    flex-direction: column;
+    }
+}
+
+.btn, .input__plata{
+    width: 100%;
+}
+
+.parrafo{
+    margin-top: 5%;
+    font-size: small;
+}
+
+.container-header { 
+	overflow:hidden;
+}
+
+
+
+.fondo-header { 
+	background-color:rgba(198, 255, 0, 1);
+	width:1440px;
+	height:83px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.logo-header { 
+	width:30vw;
+	height: 12vh;
+	position:absolute;
+	left:207px;
+	top:0;
+	background-image:url(/Images/black_grunge_text_effect\ copia.png);
+    background-repeat:no-repeat;
+	background-size:contain;
+}
+
+.links-container { 
+    font-family:Poppins;
+	width:599px;
+	height:32px;
+	position:absolute;
+	left:641px;
+	top:26px;
+}
+
+.links-2 { 
+	width:599px;
+	height:32px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.link-inicio { 
+	color:rgba(0, 0, 0, 1);
+	width:114px;
+	height:24px;
+	position:absolute;
+	left:0px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-repro { 
+	color:rgba(0, 0, 0, 1);
+	width:149px;
+	height:24px;
+	position:absolute;
+	left:138px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-quienes { 
+	color:rgba(0, 0, 0, 1);
+	width:172px;
+	height:24px;
+	position:absolute;
+	left:311px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-contacto { 
+	
+	width:92px;
+	height:32px;
+	position:absolute;
+	left:507px;
+	top:4px;
+	border-top-left-radius:22px;
+	border-top-right-radius:22px;
+	border-bottom-left-radius:22px;
+	border-bottom-right-radius:22px;
+}
+
+.footer-back { 
+    background-color:rgba(10, 10, 10, 1);
+	width:100%;
+	height:20%;
+	position:absolute;
+	left:0px;
+	top:2717px;
+}
+
+.footer-back-Q { 
+    background-color:rgba(10, 10, 10, 1);
+	width: 70em;
+	height:5em;
+	position:fixed;
+	left:0px;
+	bottom:0px;
+}
+
+
+.text-footer { 
+	color:rgba(255, 255, 255, 1);
+	width:390px;
+	height:30px;
+	position:absolute;
+	left:220px;
+	bottom:2em;
+	font-family:Poppins;
+	text-align:left;
+	font-size:20px;
+	letter-spacing:0;
+}
+.icon-position { 
+	width:20px;
+	height:20px;
+	position:absolute;
+	left:474px;
+	bottom:2em;
+}
+.icon-instagram { 
+	width:20px;
+	height:20px;
+	position:absolute;
+}
+.icon-twitter { 
+	width:20px;
+	height:20px;
+	position:absolute;
+	left:36px;
+}
+.icon-youtube{ 
+	width:20px;
+	height:20px;
+	position:absolute;
+	left:73px;
+}
+.copyright{ 
+	color:rgba(255, 255, 255, 1);
+	width:50vw;
+	height:20vh;
+	position:absolute;
+	left:150px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:10px;
+	letter-spacing:0;
+}
+
+.container-header { 
+	overflow:hidden;
+}
+
+
+
+.fondo-header { 
+	background-color:rgba(198, 255, 0, 1);
+	width:100%;
+	height:15%;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.logo-header { 
+	width:30vw;
+	height: 12vh;
+	position:absolute;
+	left:207px;
+	top:0;
+	background-image:url(/Images/black_grunge_text_effect\ copia.png);
+    background-repeat:no-repeat;
+	background-size:contain;
+}
+
+.links-container { 
+    font-family:Poppins;
+	width:599px;
+	height:32px;
+	position:absolute;
+	left:641px;
+	top:26px;
+}
+
+.links-2 { 
+	width:599px;
+	height:32px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.link-inicio { 
+	color:rgba(0, 0, 0, 1);
+	width:114px;
+	height:24px;
+	position:absolute;
+	left:0px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-repro { 
+	color:rgba(0, 0, 0, 1);
+	width:149px;
+	height:24px;
+	position:absolute;
+	left:138px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-quienes { 
+	color:rgba(0, 0, 0, 1);
+	width:172px;
+	height:24px;
+	position:absolute;
+	left:311px;
+	top:4px;
+	font-family:Poppins;
+	text-align:left;
+	font-size:16px;
+	letter-spacing:0;
+}
+
+.link-contacto { 
+	
+	width:92px;
+	height:32px;
+	position:absolute;
+	left:507px;
+	top:4px;
+	border-top-left-radius:22px;
+	border-top-right-radius:22px;
+	border-bottom-left-radius:22px;
+	border-bottom-right-radius:22px;
+}
