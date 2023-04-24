@@ -6,7 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body{
-	background: linear-gradient(to right, #c50a68e8 , #0a7b97d5);
+	
+	background: rgb(46, 45, 45);
 	font-family: Poppins;
 	font-size: 1.3em;
 	width: 50%;
@@ -16,51 +17,87 @@ body{
 	min-height: 50vh;
 }
 
+#contenedor-one{
+	background-image: url(/Images/black_grunge_text_effect\ copia.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	position:absolute;
+	width: 50vw;
+	height: 65vh;
+	margin: auto auto;
+	margin-top: 5%;
+	
+}
 
 
+#album-image {
+	
+	border-radius: 10px;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+  }
+  
+  #controls {
+	border: 1px rgba(198, 255, 0, 1) solid;
+	border-radius: 10px;
+	padding: 10px;
+	background: rgba(38, 50, 56, 0.3);
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+  }
+
+  
 ul{
 	text-align: left;
+	list-style: none;
+	position: relative;
+	line-height: 0.5em;
+	opacity: 1;
+	color: white;
 }
 
 ul:hover, svg:hover {
 	cursor: pointer;
-	color: #e84393;
+	color: rgba(198, 255, 0, 1);
+	
 }
 
 ul.active{
-	color: #770952;
-	font-weight: 600;
+	color: rgba(198, 255, 0, 1);
+	font-weight: 600px;
 }
 
-#controls{
-	border: 1px #eee solid;
-	border-radius: 10px;
-	padding: 10px;
-	background: white;
-	opacity: 0.8;
-    position: absolute;
-    top: 20%;
-}
+
  
 svg {
-	color: #cc0dac;
+	color: rgba(198, 255, 0, 1);
 }
  
 progress{
-	width: 80%;
-	margin: 10px;
-	opacity: 0.5;
- 
+	width: 90%;
+	margin: 0;
+	 
 }
  
-.timer {
+.timer-t,.timer-a {
 	width:50%;
 	position: relative;
 	top:10px;
 	left:0px;
 	text-align:left;
 	float:left;
-	color: #e618a1;
+	color: rgba(198, 255, 0, 1);
 	font-weight: 600;
 }
 .volumen{
@@ -70,16 +107,17 @@ progress{
 	right:0px;
 	text-align:right;
 	float:left;
-	color: #0d4b9c;
+	color: rgba(198, 255, 0, 1);
 	margin-bottom:20px;
 }
-#currentPlay{
-	color: #5e094b;
+/*#currentPlay{
+	color: rgba(198, 255, 0, 1);;
 	font-weight: 600;
-}
+}*/
   
-h3{
-	color: #e84393;
+h4{
+	padding-top: -10px;
+	color: rgba(198, 255, 0, 1);;
 	margin:0px;
 }
 
@@ -95,9 +133,49 @@ p a:hover {
 	color: #ffffff;
 	font-weight: 600;
 }
-
-.tracks{
-	position: absolute;
+.tracks-box::-webkit-scrollbar{
+	scrollbar-color:black;
+}
+.tracks-box{
+	
 	text-align: left;
+	height: 220px;
+	width: 	100%;
+	margin: 0 auto;
+	overflow: scroll;
+	overflow-x: hidden;
 }
 
+
+  .currentTrackName{
+	text-align: center;
+	color: rgba(255, 255, 255,1);
+	font-size: 30px;
+
+  }
+
+  .active {
+	color: rgba(198, 255, 0, 1);;
+	font-weight: bold;
+  }
+
+  button{
+	border: none;
+	background: none;
+	color: rgba(198, 255, 0, 1);
+	font-size: 8px;
+
+  }
+#prev{
+	position:relative;
+}
+
+ 
+ 
+
+ 
+  
+  
+
+
+ 

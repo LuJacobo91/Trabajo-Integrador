@@ -175,6 +175,7 @@
     
     
     .btn-enviar{ 
+       
         background-color:rgba(198, 255, 0, 1);
         width:620px;
         height:40px;
@@ -182,6 +183,8 @@
         left:423px;
         top:2613px;
         border-radius: 30px;
+        cursor: grab;
+        
     }
     
     
