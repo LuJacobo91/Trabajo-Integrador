@@ -85,6 +85,11 @@
     font-size:medium;
 }
 
+.input__plata:focus,textarea:focus {
+
+	border: 5px solid rgba(198, 255, 0, 1);
+	}
+
 /* header */
 .container-header { 
 	overflow:hidden;
