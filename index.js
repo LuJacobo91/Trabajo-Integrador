@@ -1,72 +1,73 @@
-//# sourceURL=factorialize.js
-// URL de la API de Jamendo
+//# sourceURL=factorialize.js   // Para que funcione el debugger en Chrome
+// URL de la API de Jamendo :: OK
 const apiUrl = 'https://api.jamendo.com/v3.0/';
 
-// Cliente ID de la API de Jamendo
+// Cliente ID de la API de Jamendo :: OK
 const clientId = 'fd999a30';
 
-// variables para funciones prev y next
-let tracks = [];
-let currentTrackIndex = 0;
+// variables para funciones prev y next :: OK
+let tracks = []; // Lista de canciones :: OK
+let currentTrackIndex = 0; // Índice de la canción actual :: OK
 
-// Obtener la lista de canciones
-fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytags=rock')
-  .then(response => response.json())
-  .then(data => {
+// Obtener la lista de canciones  :: OK
+fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytags=rock') // Obtener la lista de canciones :: OK
+  .then(response => response.json()) // Obtener la respuesta en formato JSON :: OK
+  .then(data => { // Obtener la lista de canciones :: OK
     
-    const tracksContainer = document.getElementById('tracks');  
-    tracks = data.results;
-    // Obtener el reproductor de audio
+    const tracksContainer = document.getElementById('tracks');  // Obtener el contenedor de canciones  :: OK
+    tracks = data.results; // Guardar la lista de canciones en la variable tracks  :: OK
+    // Obtener el reproductor de audio  :: OK
     const player = document.getElementById('player');
-    // Obtener el control de volumen
+    // Obtener el control de volumen  :: OK 
     const volumenControl = document.getElementById('volumen');
-    // Mostrar cada canción en la lista
-      data.results.forEach(track => {
-      const trackElement = document.createElement('ul'); // crea elementos de listas desordenadas
-      // Mostrar tiempo de las canciones en minutos y segundos
+      
+      // Mostrar cada canción en la lista de canciones :: OK
+      data.results.forEach(track => { // Recorre la lista de canciones :: OK
+      const trackElement = document.createElement('ul'); // crea elementos de listas desordenadas :: OK
+      
+      // Mostrar tiempo de las canciones en minutos y segundos :: OK
       const minutos = Math.floor(track.duration / 60);
       const segundos = track.duration % 60;
-      //const duracionFormateada = minutos+":"+segundos;
-      const duracionFormateada = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
-      // Carga lista de canciones con su tiempo de duracion
-            trackElement.textContent = duracionFormateada + ' ' +' - '+ ' ' + track.name; 
-            const trackImage = document.createElement('div'); // crea elementos de imagenes
-            trackImage.src = track.album_image; // carga las imagenes de los albumes
+      //const duracionFormateada = minutos+":"+segundos; // Formato de tiempo de canciones :: OK
+      const duracionFormateada = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`; // Formato de tiempo de canciones mejorado :: OK
+            
+            // Carga lista de canciones con su tiempo de duracion :: OK
+            trackElement.textContent = duracionFormateada + ' ' +' - '+ ' ' + track.name;
+            const trackImage = document.createElement('div'); // crea elementos de imagenes 
+            trackImage.src = track.album_image; // carga las imagenes de los albumes de las canciones en la lista de canciones :: OK
 
-      trackElement.addEventListener('click', () => {
-        updateActiveClick(trackElement); // Marcar la cancion activa en la lista al seleccionar con click
-        loadAndPlayTrack(track);         // Carga y reproduce la canción seleccionada y actualiza la información 
+      trackElement.addEventListener('click', () => { // Escucha el evento de click en la lista de canciones :: OK
+        updateActiveClick(trackElement); // Marcar la cancion activa en la lista al seleccionar con click :: OK
+        loadAndPlayTrack(track);         // Carga y reproduce la canción seleccionada y actualiza la información :: OK
       });
-      tracksContainer.appendChild(trackElement);
+      tracksContainer.appendChild(trackElement); // Agrega la canción a la lista de canciones :: OK
     });
     // Ajustar el volumen
-    volumenControl.addEventListener('input', () => {
-      player.volume = volumenControl.value;
+    volumenControl.addEventListener('input', () => { // Escucha el evento de cambio de valor del control de volumen :: OK
+      player.volume = volumenControl.value; // Ajusta el volumen de la canción seleccionada :: OK
     });       
   })
-      .catch(error => console.error(error));{
+      .catch(error => console.error(error));{ // Captura de errores :: OK
   }
  
    //Funcion para pausar o darle play 
  function togglePlay() { 
   if (player.paused){
-    toggleIcon();
-       
-    return player.play();
-  } else {
-    toggleIcon();
+    toggleIcon();// Cambia el icono de play a pause y viceversa :: OK
+        return player.play();// Reproduce la canción seleccionada :: OK
+    } else {
+    toggleIcon();// Cambia el icono de play a pause y viceversa :: OK
+       return player.pause(); // Pausa la canción seleccionada :: OK
     
-    return player.pause();
-    
-  }
-}
+          }
+       }
 
 
  //Funcion para cambiar el icono play o pause
- function toggleIcon() {
-  var element = document.getElementById("iconPlay");
-  element.classList.toggle("fa-pause-circle");
-  element.classList.toggle("fa-play-circle");
+ function toggleIcon() { 
+  var element = document.getElementById("iconPlay"); // Obtener el elemento del icono de play :: OK
+  element.classList.toggle("fa-pause-circle"); // Cambia el icono de play a pause y viceversa :: OK
+  element.classList.toggle("fa-play-circle"); // Cambia el icono de play a pause y viceversa :: OK
 }
 
 
@@ -76,57 +77,56 @@ const player = document.getElementById('player');
 // función para pasar a la siguiente canción
 function nextMusic() {
     currentTrackIndex++; // Aumenta el índice de la canción actual en 1 :: OK
-  if (currentTrackIndex >= tracks.length) { // Comprobar si se paso del final de la lista y vuelve al comienzo :: OK
-    currentTrackIndex = 0;
+  if (currentTrackIndex >= tracks.length) { // Comprobar si currentTrackIndex es mayor o igual que el número de canciones :: OK
+    currentTrackIndex = 0; // Comprobar si se paso del final de la lista y vuelve al comienzo :: OK
   }
   
   // Actualiza el nombre de la canción con la funcion activa :: OK
-  const currentTrack = tracks[currentTrackIndex];
-  const currentTrackNameElement = document.getElementById('currentTrackName');
-   currentTrackNameElement.innerText = currentTrack.name;
+  const currentTrack = tracks[currentTrackIndex]; // Toma la canción seleccionada :: OK
+  const currentTrackNameElement = document.getElementById('currentTrackName'); // Obtener el nombre de la canción actual :: OK
+   currentTrackNameElement.innerText = currentTrack.name; // Actualiza el nombre de la canción con la funcion activa :: OK
    
    // Carga la nueva cancion y la reproduce  :: OK
-  player.src = currentTrack.audio;
-  player.load();
-  player.play();
+  player.src = currentTrack.audio; // Toma la canción seleccionada :: OK
+  player.load(); // Carga la canción seleccionada :: OK
+  player.play(); // Reproduce la canción seleccionada :: OK
 }
 
 // función para volver a la canción anterior
 function prevMusic() {
     currentTrackIndex--; // Reduce el índice de la canción actual en 1 :: OK
-    if (currentTrackIndex < 0) {
-  currentTrackIndex = tracks.length - 1;
+    if (currentTrackIndex < 0) { // Comprobar si currentTrackIndex es menor que 0 :: OK
+  currentTrackIndex = tracks.length - 1; // Comprobar si se paso del comienzo de la lista y vuelve al final :: OK
   }
   
   // Actualiza el nombre de la canción con la funcion activa :: OK
-  const currentTrack = tracks[currentTrackIndex];
-  const currentTrackNameElement = document.getElementById('currentTrackName');
-  currentTrackNameElement.innerText = currentTrack.name;
+  const currentTrack = tracks[currentTrackIndex]; // Toma la canción seleccionada :: OK
+  const currentTrackNameElement = document.getElementById('currentTrackName'); // Obtener el nombre de la canción actual :: OK
+  currentTrackNameElement.innerText = currentTrack.name; // Actualiza el nombre de la canción con la funcion activa :: OK
    
   // Carga la nueva cancion y la reproduce  :: OK
-  player.src = currentTrack.audio;
-  player.load();
-  player.play();
+  player.src = currentTrack.audio; // Toma la canción seleccionada :: OK 
+  player.load(); // Carga la canción seleccionada :: OK
+  player.play(); // Reproduce la canción seleccionada :: OK
   }
 
   // Barra de progreso  y tiempo de canciones :: OK
-  const timerActive = document.getElementById('duracion-total');
-  const currentTrackTime = document.getElementById('currentTrackTime');
-  player.addEventListener('timeupdate', () => {
+  const timerActive = document.getElementById('duracion-total'); // Obtener el tiempo de la canción actual :: OK
+  const currentTrackTime = document.getElementById('currentTrackTime'); // Obtener el tiempo de la canción actual :: OK
+  player.addEventListener('timeupdate', () => { // Actualiza el tiempo de la canción actual :: OK
     
     // Barra de progreso :: OK
-    if (player.currentTime >0){
-        const barra = document.getElementById('progress-bar')
-          barra.value = (player.currentTime / player.duration) * 100
+    if (player.currentTime >0){ // Comprueba que el reproductor este reproduciendo una canción :: OK
+        const barra = document.getElementById('progress-bar') // Obtener la barra de progreso :: OK
+          barra.value = (player.currentTime / player.duration) * 100 // Calcula el porcentaje de la barra de progreso :: OK
     }
     // Mostrar el tiempo de la canción actual :: OK
-    const currentMinutes = Math.floor(player.currentTime / 60);
-    const currentSeconds = Math.floor(player.currentTime % 60);
-    const totalMinutes = Math.floor(player.duration / 60);
-    const totalSeconds = Math.floor(player.duration % 60);
+    const currentMinutes = Math.floor(player.currentTime / 60); // Calcula los minutos de la canción actual :: OK
+    const currentSeconds = Math.floor(player.currentTime % 60); // Calcula los segundos de la canción actual :: OK
+    const totalMinutes = Math.floor(player.duration / 60); // Calcula los minutos de la canción total :: OK
+    const totalSeconds = Math.floor(player.duration % 60); // Calcula los segundos de la canción total :: OK
+    // Formato de tiempo de canciones :: OK
     timerActive.innerHTML = `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')} / ${totalMinutes.toString().padStart(2, '0')}:${totalSeconds.toString().padStart(2, '0')}`;
-  
-  
   });
   
 
@@ -134,22 +134,22 @@ function prevMusic() {
   // Carga y reproduce la canción seleccionada y actualiza la información :: OK
   function loadAndPlayTrack(track) {
     // Actualiza el nombre de la canción actual
-  const currentTrackNameElement = document.getElementById('currentTrackName');
-  currentTrackNameElement.innerText = track.name;
+  const currentTrackNameElement = document.getElementById('currentTrackName'); // Toma el elemento del nombre de la canción actual :: OK
+  currentTrackNameElement.innerText = track.name; // Actualiza el nombre de la canción actual :: OK
 
     // Actualiza la imagen del álbum en la página
-    const albumImageElement = document.getElementById('album-image');
-    albumImageElement.src = track.album_image;
+    const albumImageElement = document.getElementById('album-image');  // Toma el elemento de la imagen del album :: OK
+    albumImageElement.src = track.album_image;  // Carga la imagen del album de la canción seleccionada :: OK
 
   // Carga y reproduce la canción seleccionada
-  player.src = track.audio;
-  player.load();
-  player.play();
+  player.src = track.audio; // Toma la canción seleccionada de la lista :: OK
+  player.load(); // Carga la canción seleccionada :: OK
+  player.play(); // Reproduce la canción seleccionada :: OK
 
   // Actualiza el índice de la canción actual para que funcionen los botones next y prev :: OK
   currentTrackIndex = tracks.indexOf(track);
 
-  player.addEventListener('ended', () => {
+  player.addEventListener('ended', () => {// Reproduce la siguiente canción al terminar la actual :: OK
     nextMusic(); // Reproduce la siguiente canción al terminar la actual :: OK
     updateActiveTrack(); // Actualiza la canción activa en la lista :: OK
    });
@@ -157,49 +157,49 @@ function prevMusic() {
   }
 
        // función para marcar la cancion activa en la lista al cambiar con los botones next y prev :: OK
-        function updateActiveTrack() {
-        const tracksContainer = document.getElementById('tracks');
-        const trackElements = tracksContainer.children;
-        console.log('trackElements:', trackElements);
-        console.log('currentTrackIndex:', currentTrackIndex);
-        for (let i = 0; i < trackElements.length; i++) {
-          if (i === currentTrackIndex) {
-            trackElements[i].classList.add('active');
+        function updateActiveTrack() { // Actualiza la canción activa en la lista :: OK
+        const tracksContainer = document.getElementById('tracks'); // Tomar la lista de canciones
+        const trackElements = tracksContainer.children; // Tomar los elementos de la lista
+        console.log('trackElements:', trackElements); // Imprime los elementos de la lista
+        console.log('currentTrackIndex:', currentTrackIndex); // Imprime el índice de la canción actual
+        for (let i = 0; i < trackElements.length; i++) { // Recorrer los elementos de la lista
+          if (i === currentTrackIndex) { // Comprobar si el elemento es el actual
+            trackElements[i].classList.add('active'); // Agregar la clase "active" al elemento seleccionado
           } else {
-            trackElements[i].classList.remove('active');
+            trackElements[i].classList.remove('active'); // Remover la clase "active" del elemento anterior
           }
         }
       }
       
       // función para marcar la cancion activa en la lista al seleccionar con click :: OK
-      function updateActiveClick(trackElement) {
-        const previousActiveTrack = document.querySelector('.active');
-        if (previousActiveTrack) {
-          previousActiveTrack.classList.remove('active');
+      function updateActiveClick(trackElement) { // Recibe el elemento seleccionado
+        const previousActiveTrack = document.querySelector('.active'); // Tomar el elemento anterior con la clase "active"
+        if (previousActiveTrack) { // Comprobar si hay una canción activa
+          previousActiveTrack.classList.remove('active'); // Remover la clase "active" del elemento anterior
         }
-        trackElement.classList.add('active');
+        trackElement.classList.add('active'); // Agregar la clase "active" al elemento seleccionado
       }
 
       // Ajustar el volumen, mostrar porcentaje :: OK
-      const volumenBarra = document.getElementById('volumen');
-      const volumenPorcentaje = document.getElementById('volumen-porcentaje');
+      const volumenBarra = document.getElementById('volumen'); // Tomar el elemento de la barra de volumen
+      const volumenPorcentaje = document.getElementById('volumen-porcentaje'); // Mostrar el porcentaje de volumen 
       
-      volumenBarra.addEventListener('input', () => {
-        const porcentaje = volumenBarra.value;
-        volumenPorcentaje.textContent = `${porcentaje}%`;
-        player.volume = porcentaje / 100;
+      volumenBarra.addEventListener('input', () => { // Escuchar el evento input de la barra de volumen
+        const porcentaje = volumenBarra.value; // Tomar el valor de l a barra de volumen
+        volumenPorcentaje.textContent = `${porcentaje}%`; //  Mostrar el porcentaje
+        player.volume = porcentaje / 100; // Ajustar el volumen
       });
 
 // funcion para adelantar y retroceder desde la barra de progreso :: OK
 const progressBar = document.getElementById('progress-bar');
 progressBar.addEventListener('click', function(event) {
-  // Obtener la posición x del clic del usuario
-  const clickX = event.clientX;
+
+  const clickX = event.clientX; // tomar la posición x del clic del usuario
   
-  const barLeftX = progressBar.getBoundingClientRect().left;
-  const progressBarPosition = clickX - barLeftX;
-  const duration = player.duration;
-  const currentPosition = (progressBarPosition / progressBar.offsetWidth) * duration;
+  const barLeftX = progressBar.getBoundingClientRect().left; // tomar la posición x del elemento
+  const progressBarPosition = clickX - barLeftX;  // tomar la posición x del clic del usuario dentro del elemento
+  const duration = player.duration; // tomar la duración total de la canción
+  const currentPosition = (progressBarPosition / progressBar.offsetWidth) * duration; // tomar la posición x del clic del usuario dentro del elemento en relación a la duración total de la canción
   
-  player.currentTime = currentPosition;
+  player.currentTime = currentPosition; // Actualizar la posición actual de la canción
 });
