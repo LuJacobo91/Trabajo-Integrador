@@ -69,7 +69,7 @@ body{
   
 i{
 	border-radius: 15%;
-	box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.979);
+
 }
 #ver-ocultar{
 	color: rgba(200, 255, 0, 0.582);
@@ -87,7 +87,7 @@ i{
 	scrollbar-color:rgb(209, 207, 207);
 }
 .tracks-box{
-	font-size: 1.5em;
+	font-size: 15px;
 	margin-top: 5%;
 	position:absolute;
 	left: 92%;
@@ -95,7 +95,7 @@ i{
 	background-color: rgba(38, 50, 56, 0.7);
 	clip-path: inset(0 0 0 35px);
 	text-align: left;
-	width: 100%;
+	width: 80%;
 	height: 50vh;
 	margin: 0 15px;
 	overflow: scroll;
@@ -155,8 +155,9 @@ h4{
 	padding: 0;
 	color: rgba(198, 255, 0, 1);;
 	margin:0px;
-	font-size: 1.5rem;
+	font-size: 15px;
 	white-space: nowrap;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1.5);
 }
 
 
@@ -166,7 +167,7 @@ h4{
     margin: 0 auto;
     width: 50%;
     height: 100%;
-    font-size: 2em;
+    font-size: 18px;
     color: rgba(198, 255, 0, 1);
     text-size-adjust: 100%;
     display: flex;
@@ -175,6 +176,7 @@ h4{
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1.5);
 }
 
 
@@ -210,6 +212,7 @@ svg {
     color: rgba(198, 255, 0, 1);
     font-weight: 600;
 	margin-left: 5%;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1.5);
 }
 
 .timer-a {
@@ -219,8 +222,11 @@ svg {
     color: rgba(198, 255, 0, 1);
     font-weight: 600;
 	margin-right: 5%;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1.5);
 }
-
+.shadow{
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1.5);
+}
 
 	.volumen{
 		width:50%;
@@ -232,6 +238,9 @@ svg {
 		color: rgba(198, 255, 0, 1);
 		margin-bottom:20px;
 		font-size: 1.3rem;
+		align-items: center;
+		gap:5px;
+		margin-left: 7px;
 	}
 	#currentPlay{
 		color: rgba(198, 255, 0, 1);;
@@ -245,6 +254,7 @@ svg {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	gap:5px;
 }
 
 button{
@@ -275,12 +285,12 @@ button{
 
 	#ver-ocultar:active {
 		transform: scale(0.90);
-		box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.24);
+
 		}
 
 		
 
-		@media (min-width: 768px) and (max-width: 1199px){
+		@media (max-width: 1199px){
 			#contenedor-one {
 				position: relative;
 				display: flex;
@@ -302,12 +312,12 @@ button{
 			 
 
 			  h4 {
-				font-size: 2rem;
+				font-size: 15px;
 			  }
 			  
 			  .currentTrackName {
-				font-size: 2em;
-				width: 80%;
+				font-size: 15px;
+				width: 40%;
 			  }
 			  #prev, #next, #play-pausa {
 				font-size: 1em;
@@ -401,8 +411,7 @@ button{
 			.tracks{
 				
 				display: flex;
-				flex-direction: row;
-				
+				flex-direction: row;				
 			}
 
 			.tracks-box{
@@ -449,11 +458,14 @@ button{
 		 
 
 		  h4 {
-			font-size: 2rem;
+			font-size: 15px;
 		  }
+		  .fa-5x {
+			font-size: 1em;
+		}
 		  
 		  .currentTrackName {
-			font-size: 2em;
+			font-size: 22px;
 			width: 80%;
 		  }
 		  #prev, #next, #play-pausa {
@@ -553,7 +565,7 @@ button{
 		}
 
 		.tracks-box{
-			font-size: 1em;
+			font-size: 10px;
 			margin-top: 0;
 			position:absolute;
 			left: 0;
@@ -602,6 +614,11 @@ nav a{
     font-weight: 600;
     padding-right: 35px;
 }
+.hover:hover{
+		color: red;
+		cursor: pointer;
+}
+	
 /*FOOTER*/
 footer {
 	position: absolute;
@@ -612,6 +629,7 @@ footer {
   }
 .div-fot{
 	display: flex;
+
 }
 .text-seguinos{
 	margin-left: 10%;
