@@ -46,24 +46,31 @@ fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytag
     // Ajustar el volumen
     volumenControl.addEventListener('input', () => { // Escucha el evento de cambio de valor del control de volumen :: OK
       player.volume = volumenControl.value / 100; // Ajusta el volumen de la canción seleccionada :: OK
-    });       
+    });   
+       
   })
       .catch(error => console.error(error));{ // Captura de errores :: OK
   }
  
 
    //Funcion para pausar o reproducir la canción
- function togglePlay() { 
-  if (player.paused){
-    toggleIcon();// Cambia el icono de play a pause y viceversa :: OK
-        return player.play();// Reproduce la canción seleccionada :: OK
-    } else {
-    toggleIcon();// Cambia el icono de play a pause y viceversa :: OK
-       return player.pause(); // Pausa la canción seleccionada :: OK
-    
-          }
-       }
+   let playMusic = false; // variable booleana para rastrear si alguna canción se ha reproducido previamente
 
+   function togglePlay() { 
+     if (!playMusic) { 
+      loadAndPlayTrack(tracks[0]); // Si ninguna canción se ha reproducido aún, reproducir la canción actual desde el principio
+       toggleIcon();
+       playMusic = true;
+     } else { // Si ya se ha reproducido una canción, volver a su funcionalidad normal de pausa/reproducción
+       if (player.paused) {
+         toggleIcon();
+         player.play();
+       } else {
+         toggleIcon();
+         player.pause();
+       }
+     }
+   }
  //Funcion para cambiar el icono play o pause
  function toggleIcon() { 
   var element = document.getElementById("iconPlay"); // Obtener el elemento del icono de play :: OK
@@ -159,7 +166,7 @@ albumImageElement.src = currentTrack.album_image;  // Carga la imagen del album 
   player.src = track.audio; // Toma la canción seleccionada de la lista :: OK
   player.load(); // Carga la canción seleccionada :: OK
   player.play(); // Reproduce la canción seleccionada :: OK
- 
+  playMusic = true; // para avisar que ya se reproujo la canción :: OK
  
   // Actualiza el índice de la canción actual para que funcionen los botones next y prev :: OK
   currentTrackIndex = tracks.indexOf(track);
