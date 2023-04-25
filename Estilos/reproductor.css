@@ -9,7 +9,12 @@
 	
 }
 
-
+body{
+    font-family: 'poppins';
+    margin: 0;
+	background-color: black;
+	height: 100%;
+}
 
 #contenedor-one{
 	
@@ -172,12 +177,7 @@ h4{
     text-overflow: ellipsis;
 }
 
- .espacio{
-	position: absolute;
-	background-color: blue;
-	height: 40%;
-	width: 100%;
- }
+
   .playlist-icon{
 	position:fixed;
 	width: 20px;
@@ -569,3 +569,129 @@ button{
 			overflow-x: hidden;
 			
 		}}
+
+
+		
+a{
+    text-decoration: none;
+    color:#0B0B0B;
+}
+a:hover {
+		color: red;
+		cursor: pointer;
+}
+header{
+    min-height: 70px;
+    display: flex;
+    background-color:rgba(198, 255, 0, 1);
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    padding-right: 7%;
+}
+.logo{
+    display: flex;
+    margin-left: 10%;
+	
+}
+.logo img{
+    height: 40px;
+    display: flex;
+}
+nav a{
+    font-weight: 600;
+    padding-right: 35px;
+}
+/*FOOTER*/
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px; /*altura que desees para el footer*/
+	z-index: 0;
+  }
+.div-fot{
+	display: flex;
+}
+.text-seguinos{
+	margin-left: 10%;
+	color: white;
+}
+.copyright-QS{
+	text-align: center;
+	color: white;
+}
+footer img{
+	height: 30px;
+	margin: .3rem;
+}
+.img-fot{
+	margin-left: 60px;
+}
+.img-icons-fot:hover{
+	transform: scale(1.2);
+	transition: transform 0.5s;
+	cursor: pointer;
+}
+.logo:hover img{
+	transform: scale(1.1);
+	transition: transform 0.5s;
+	cursor: pointer;
+}
+
+/*@media header*/
+
+@media (max-width: 750px){
+    header{
+        flex-direction: column;
+        text-align: center;
+        padding-right: 0;
+		padding-bottom: 8px;
+    }
+	.logo{
+		margin-left: 0px;
+	}
+    
+}
+
+/*@media members*/
+@media screen and (max-width: 768px) {
+	footer{
+		line-height: 10px;
+	}
+}
+ /*media body + footer */ 
+@media only screen and (max-width: 768px) {
+	/*cambiar .container-body... por el body del index.html*/
+	.container-body-quienesSomos {
+		max-width: 100%;
+		margin: 0;
+		font-size: 12px;
+	}
+	.copyright-QS{
+		line-height: 10px;
+		font-size: 10px;
+	}
+	.text-seguinos{
+		line-height: 17px;
+	}
+	.div-fot{
+		display: block;
+		height: 100%;
+		margin: 0;
+		text-align: center;
+		margin-left: 0;
+	}
+	.text-seguinos{
+		margin-left: 0;
+		text-align: center;
+	}
+	.img-icons-fot{
+		align-items: center;
+	}
+	.img-fot{
+		margin-left: 0;
+	}
+	
+}
+ 

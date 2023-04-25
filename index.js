@@ -45,7 +45,7 @@ fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytag
     });
     // Ajustar el volumen
     volumenControl.addEventListener('input', () => { // Escucha el evento de cambio de valor del control de volumen :: OK
-      player.volume = volumenControl.value; // Ajusta el volumen de la canción seleccionada :: OK
+      player.volume = volumenControl.value / 100; // Ajusta el volumen de la canción seleccionada :: OK
     });       
   })
       .catch(error => console.error(error));{ // Captura de errores :: OK
@@ -220,6 +220,7 @@ progressBar.addEventListener('click', function(event) {
 });
 
 
+// Función para mostrar o ocultar la lista de canciones :: OK
 function mostrarOcultar() {
   var contenido = document.getElementById("tracks");
   if (contenido.style.display === "none") {
@@ -233,24 +234,23 @@ function mostrarOcultar() {
 // Obtener el elemento que muestra u oculta la lista de canciones :: OK
 var verOcultar = document.getElementById("ver-ocultar");
 
-// Obtener el contenedor que se va a mover
+// Obtener el contenedor que se va a mover :: OK
 var contenedorOne = document.getElementById("contenedor-one");
 
-// Función para cambiar la posición del contenedor
+// Función para cambiar la posición del contenedor :: OK
 function cambiarPosicion() {
-  // Revisar si el elemento "#tracks" está visible
+ 
   var tracksVisible = document.getElementById("tracks").offsetParent !== null;
 
   // Cambiar la posición del contenedor según la visibilidad de los tracks
   if (window.innerWidth <= 768) {
-    // Función alternativa para pantallas de 768px o menos
+    
     contenedorOne.style.left = "";
     contenedorOne.style.right = "";
 
   }
   if (window.innerWidth <= 480) {
-    // Función alternativa para pantallas de 768px o menos
-    contenedorOne.style.left = "";
+     contenedorOne.style.left = "";
     contenedorOne.style.right = "";
 
   }
@@ -264,18 +264,3 @@ function cambiarPosicion() {
   }
 }
 
-// Agregar la función como un manejador de eventos para el clic en "verOcultar"
-//verOcultar.addEventListener("click", cambiarPosicion);
-
-
-var boton = document.getElementById("miBoton");
-
-boton.onclick = function() {
-  if (window.innerWidth <= 768) {
-    // Función alternativa para pantallas de 768px o menos
-    alert("¡Este es el botón para pantallas pequeñas!");
-  } else {
-    // Función por defecto para pantallas mayores a 768px
-    alert("¡Este es el botón para pantallas grandes!");
-  }
-};
