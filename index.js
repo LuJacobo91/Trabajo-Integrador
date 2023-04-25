@@ -54,7 +54,7 @@ fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytag
  
 
    //Funcion para pausar o reproducir la canción
-   let playMusic = false; // variable booleana para rastrear si alguna canción se ha reproducido previamente
+   let playMusic = false; // variable booleana para rastrear si alguna canción se reprodujo
 
    function togglePlay() { 
      if (!playMusic) { 
