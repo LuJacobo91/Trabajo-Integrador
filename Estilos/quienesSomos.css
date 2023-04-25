@@ -1,9 +1,10 @@
 body{
 	background-color: rgb(11, 11, 11);
+	font-family: 'Poppins';
 }
 /*CONTEINER BODY*/
-.container-body-quienesSomos{
-	font-family: Poppins;
+.csontainer-body-quienesSomos{
+	font-family: 'Poppins';
     background-color: rgb(11, 11, 11);
     position: absolute;
     width: 100%;
@@ -75,7 +76,7 @@ nav a{
 	margin: 20px;
 	margin-top: 40px;
 	text-align: center;
-	font-family: Poppins;
+	font-family: 'Poppins';
 	color: #FFFFFF;
 }
 
