@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="Estilos/header-footer.css">
     <link rel="stylesheet" href="Estilos/reproductor.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    
-        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://kit.fontawesome.com/282019b00c.js" crossorigin="anonymous"></script>
+
+<!-- Incluimos wavesurfer.js desde cdnjs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.4/wavesurfer.min.js"></script>
+
         <!-- FONTAWESOME -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
             integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -21,19 +25,16 @@
 <body>
 
     <header>
-       <div class="container-header">
-            <div class="fondo-header"></div>
-            <div class="logo-header"></div>
-            <div class="links-container">
-                <div class="links-2">
-                        <a href="index.html" target="_blank" class="link-inicio">Inicio</a>
-                        <a href="Reproductor.html" class="link-repro"> Reproductor</a>
-                        <a href="QuienesSomos.html" class="link-quienes">Quienes Somos</a>
-                        <a href="Contacto.html" class="link-contacto">Contacto</a>
-                 </div>
-            </div>
-        </div>
-    </header>
+    <a href="index.html" class="logo">
+        <img src="Images/Logo_MusicNow_Desktop.png" alt="Logo Music Now">
+    </a>
+    <nav>
+      <a href="index.html" class="nav-link" target="_blank">Inicio</a>
+      <a href="Reproductor.html" class="nav-link">Reproductor</a>
+      <a href="QuienesSomos.html" class="nav-link">Quienes Somos</a>
+      <a href="Contacto.html" class="nav-link">Contacto</a>
+    </nav>
+</header>
 
     <!--<audio id="player" ontimeupdate="updateProgress();">-->
         <audio id="player" >
@@ -41,35 +42,43 @@
         <source id="source">
         Audio no soportado
     </audio>
-    <div id="contenedor-one"><img id="album-image">
+    
+    <div class="contenedor"></div>
+   <div id="contenedor-one"><img id="album-image">
     <div id="controls" class="controls">
-        <div class="timer">
-        <div class="timer-t" id="duracion-total" >
-            
-           
-            
-            &nbsp;
-        </div>
-        <div class="timer-a" id="duracion-actual"></div>
-        </div> 
         
+       
         <div class="volumen">
             Vol:
             <i class="fas fa-volume-down"></i>
             <input type="range" class="bar-volumen" name="volumen" id="volumen" min="0" max="100" step="1" value="50" title="Volumen">
             <i class="fas fa-volume-up"></i>
             <span id="volumen-porcentaje">50%</span>
+            
         </div>
+        <div> <button id="ver-ocultar" onclick="mostrarOcultar(); cambiarPosicion();" title="Mostrar/Ocultar Lista"><i class="fa-regular fa-rectangle-list"></i></button></div>
+        <div id="botones-control" class="botones-control">
         <button id="prev" onclick="prevMusic();updateActiveTrack();" title="Anterior"><i class="fas fa-backward fa-5x" ></i></button>
         <button id="play-pausa" onclick="togglePlay();" title="Play/Pausa"><i class="far fa-play-circle fa-5x"  id="iconPlay"></i></button>
         <button id="next" onclick="nextMusic();updateActiveTrack();" title="Siguiente"> <i class="fas fa-forward fa-5x" ></i></button>
+        </div>
+        
         <br>
+        
         <div id="currentTrack">
             <span id="currentTrackName" class="currentTrackName"></span><span id="currentTrackDuration"></span>
           </div><br>
-        <progress id="progress-bar" value="0" max="100" title="Barra de progreso"></progress>
+          <h4>En reproducción</h4>
+          <div class="timer">
+            <div class="timer-t" id="duracion-total" >
+             </div>
+            <div class="timer-a" id="duracion-actual">
+            </div>
+            </div> 
+            
+            <progress id="progress-bar" value="0" max="100" title="Barra de progreso"></progress>
         
-        <h4>Lista de reproducción</h4>
+        
        
         
         <div id="tracks" class="tracks-box">
@@ -77,34 +86,34 @@
             
            
         </div>
-
     </div>
 </div>
+</div>
+<footer>
     
-        <footer>
-            <div class="footer-back-Q">
-                <span  class="text-footer">Seguinos en redes</span>
-                <div class="icon-position">
-                    
-                    
-                   
-                  <div class="icon-twitter">
-                    <a href="https://twitter.com"><img src="Images/Logo_Twitter.png" alt=""></a>
-                   
-                  </div>
-                  <div class="icon-instagram">
-                    <a href="https://instagram.com"><img src="Images/Logo_Instagram.png" alt=""></a>
-                    
-                  </div>
-                  <div class="icon-youtube">
-                    <a href="https://youtube.com"><img src="Images/Logo_Youtube.png" alt=""></a>
-                </div>
-                <div>
-                    <p class="copyright">Todos los derechos reservados Music Now</p>  
-                </div>
-                </div>
-              </div>
-          </footer>
+    
+    <div class="div-fot">
+      <p class="text-seguinos">Seguinos en nuestras redes</p>
+        <div class="img-fot">
+          <a href="https://www.twitter.com" target="_blank">
+            <img class="img-icons-fot" src="/Images/Logo_Twitter.png" alt="Twitter">
+          </a>
+
+          <a href="https://www.instagram.com" target="_blank">
+            <img class="img-icons-fot" src="/Images/Logo_Instagram.png" alt="Instagram">
+          </a>
+      
+          <a href="https://www.youtube.com" target="_blank">
+            <img class="img-icons-fot" src="/Images/Logo_Youtube.png" alt="Youtube">
+          </a>
+        </div>
+      
+    </div>
+      
+    <br/>
+    <p class="copyright-QS">Todos los derechos reservados Music Now ©</p>
+  </footer>
+
 
   <script type="text/javascript" src="index.js"></script>
   

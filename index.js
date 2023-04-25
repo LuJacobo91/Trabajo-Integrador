@@ -39,6 +39,7 @@ fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytag
       trackElement.addEventListener('click', () => { // Escucha el evento de click en la lista de canciones :: OK
         updateActiveClick(trackElement); // Marcar la cancion activa en la lista al seleccionar con click :: OK
         loadAndPlayTrack(track);         // Carga y reproduce la canción seleccionada y actualiza la información :: OK
+        
       });
       tracksContainer.appendChild(trackElement); // Agrega la canción a la lista de canciones :: OK
     });
@@ -50,7 +51,8 @@ fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytag
       .catch(error => console.error(error));{ // Captura de errores :: OK
   }
  
-   //Funcion para pausar o darle play 
+
+   //Funcion para pausar o reproducir la canción
  function togglePlay() { 
   if (player.paused){
     toggleIcon();// Cambia el icono de play a pause y viceversa :: OK
@@ -61,7 +63,6 @@ fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytag
     
           }
        }
-
 
  //Funcion para cambiar el icono play o pause
  function toggleIcon() { 
@@ -85,6 +86,10 @@ function nextMusic() {
   const currentTrack = tracks[currentTrackIndex]; // Toma la canción seleccionada :: OK
   const currentTrackNameElement = document.getElementById('currentTrackName'); // Obtener el nombre de la canción actual :: OK
    currentTrackNameElement.innerText = currentTrack.name; // Actualiza el nombre de la canción con la funcion activa :: OK
+   // Actualiza la imagen del álbum en la página
+   const albumImageElement = document.getElementById('album-image');  // Toma el elemento de la imagen del album :: OK
+   albumImageElement.src = currentTrack.album_image;  // Carga la imagen del album de la canción seleccionada :: OK
+
    
    // Carga la nueva cancion y la reproduce  :: OK
   player.src = currentTrack.audio; // Toma la canción seleccionada :: OK
@@ -104,6 +109,11 @@ function prevMusic() {
   const currentTrackNameElement = document.getElementById('currentTrackName'); // Obtener el nombre de la canción actual :: OK
   currentTrackNameElement.innerText = currentTrack.name; // Actualiza el nombre de la canción con la funcion activa :: OK
    
+// Actualiza la imagen del álbum en la página
+const albumImageElement = document.getElementById('album-image');  // Toma el elemento de la imagen del album :: OK
+albumImageElement.src = currentTrack.album_image;  // Carga la imagen del album de la canción seleccionada :: OK
+
+
   // Carga la nueva cancion y la reproduce  :: OK
   player.src = currentTrack.audio; // Toma la canción seleccionada :: OK 
   player.load(); // Carga la canción seleccionada :: OK
@@ -112,6 +122,7 @@ function prevMusic() {
 
   // Barra de progreso  y tiempo de canciones :: OK
   const timerActive = document.getElementById('duracion-total'); // Obtener el tiempo de la canción actual :: OK
+  const timerTotal = document.getElementById('duracion-actual'); // Obtener el
   const currentTrackTime = document.getElementById('currentTrackTime'); // Obtener el tiempo de la canción actual :: OK
   player.addEventListener('timeupdate', () => { // Actualiza el tiempo de la canción actual :: OK
     
@@ -120,13 +131,15 @@ function prevMusic() {
         const barra = document.getElementById('progress-bar') // Obtener la barra de progreso :: OK
           barra.value = (player.currentTime / player.duration) * 100 // Calcula el porcentaje de la barra de progreso :: OK
     }
+
     // Mostrar el tiempo de la canción actual :: OK
     const currentMinutes = Math.floor(player.currentTime / 60); // Calcula los minutos de la canción actual :: OK
     const currentSeconds = Math.floor(player.currentTime % 60); // Calcula los segundos de la canción actual :: OK
     const totalMinutes = Math.floor(player.duration / 60); // Calcula los minutos de la canción total :: OK
     const totalSeconds = Math.floor(player.duration % 60); // Calcula los segundos de la canción total :: OK
     // Formato de tiempo de canciones :: OK
-    timerActive.innerHTML = `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')} / ${totalMinutes.toString().padStart(2, '0')}:${totalSeconds.toString().padStart(2, '0')}`;
+    timerActive.innerHTML = `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')}`;
+    timerTotal.innerHTML = `${totalMinutes.toString().padStart(2, '0')}:${totalSeconds.toString().padStart(2, '0')}`;
   });
   
 
@@ -141,11 +154,13 @@ function prevMusic() {
     const albumImageElement = document.getElementById('album-image');  // Toma el elemento de la imagen del album :: OK
     albumImageElement.src = track.album_image;  // Carga la imagen del album de la canción seleccionada :: OK
 
-  // Carga y reproduce la canción seleccionada
+   
+  
   player.src = track.audio; // Toma la canción seleccionada de la lista :: OK
   player.load(); // Carga la canción seleccionada :: OK
   player.play(); // Reproduce la canción seleccionada :: OK
-
+ 
+ 
   // Actualiza el índice de la canción actual para que funcionen los botones next y prev :: OK
   currentTrackIndex = tracks.indexOf(track);
 
@@ -203,3 +218,64 @@ progressBar.addEventListener('click', function(event) {
   
   player.currentTime = currentPosition; // Actualizar la posición actual de la canción
 });
+
+
+function mostrarOcultar() {
+  var contenido = document.getElementById("tracks");
+  if (contenido.style.display === "none") {
+    contenido.style.display = "block";
+  } else {
+    contenido.style.display = "none";
+  }
+}
+
+
+// Obtener el elemento que muestra u oculta la lista de canciones :: OK
+var verOcultar = document.getElementById("ver-ocultar");
+
+// Obtener el contenedor que se va a mover
+var contenedorOne = document.getElementById("contenedor-one");
+
+// Función para cambiar la posición del contenedor
+function cambiarPosicion() {
+  // Revisar si el elemento "#tracks" está visible
+  var tracksVisible = document.getElementById("tracks").offsetParent !== null;
+
+  // Cambiar la posición del contenedor según la visibilidad de los tracks
+  if (window.innerWidth <= 768) {
+    // Función alternativa para pantallas de 768px o menos
+    contenedorOne.style.left = "";
+    contenedorOne.style.right = "";
+
+  }
+  if (window.innerWidth <= 480) {
+    // Función alternativa para pantallas de 768px o menos
+    contenedorOne.style.left = "";
+    contenedorOne.style.right = "";
+
+  }
+
+  if (tracksVisible) {
+   
+    contenedorOne.style.right = "20%";
+  } else {
+    contenedorOne.style.left = "";
+    contenedorOne.style.right = "";
+  }
+}
+
+// Agregar la función como un manejador de eventos para el clic en "verOcultar"
+//verOcultar.addEventListener("click", cambiarPosicion);
+
+
+var boton = document.getElementById("miBoton");
+
+boton.onclick = function() {
+  if (window.innerWidth <= 768) {
+    // Función alternativa para pantallas de 768px o menos
+    alert("¡Este es el botón para pantallas pequeñas!");
+  } else {
+    // Función por defecto para pantallas mayores a 768px
+    alert("¡Este es el botón para pantallas grandes!");
+  }
+};

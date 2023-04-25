@@ -1,181 +1,571 @@
 
 
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-body{
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Poppins';
 	
-	background: rgb(46, 45, 45);
-	font-family: Poppins;
-	font-size: 1.3em;
-	width: 50%;
-	margin: 15px auto;
-	padding: 20px;
-	text-align: center;
-	min-height: 50vh;
 }
 
+
+
 #contenedor-one{
+	
+	position: relative;
+	display: flex;
 	background-image: url(/Images/black_grunge_text_effect.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	position:absolute;
-	width: 50vw;
-	height: 65vh;
+	
+	width: 40%;
+	height: 50vh;
+	right: 0;
+	bottom: 5%;
 	margin: auto auto;
 	margin-top: 5%;
-	
+	flex-wrap: wrap;
 }
+
 
 
 #album-image {
 	
-	border-radius: 10px;
-	padding: 10px;
+	border-radius: 5px;
+	padding: 1px;
+	justify-content: center;
 	position: absolute;
-	top: 0;
+	bottom: 5%;
+	top: -3px;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 0;
+	max-width: 100%;
+	
   }
-  
+
   #controls {
 	border: 1px rgba(198, 255, 0, 1) solid;
 	border-radius: 10px;
-	padding: 10px;
 	background: rgba(38, 50, 56, 0.3);
 	opacity: 1;
+	justify-content: center;
 	position: absolute;
-	top: 0;
-	left: 0;
+	bottom: 0;
+	max-width: 100%;
 	width: 100%;
 	height: 100%;
-	z-index: 1;
+	
+	
   }
 
   
-ul{
+i{
+	border-radius: 15%;
+	box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.979);
+}
+#ver-ocultar{
+	color: rgba(200, 255, 0, 0.582);
+	
+	position: relative;
+	margin: 0;
+	padding: 0;
+	padding-top: 1px;
+    padding-bottom: 0em;
+	left:35%;
+	font-size: 60px;
+}
+
+  .tracks-box::-webkit-scrollbar{
+	scrollbar-color:rgb(209, 207, 207);
+}
+.tracks-box{
+	font-size: 1.5em;
+	margin-top: 5%;
+	position:absolute;
+	left: 92%;
+	bottom: 0;
+	background-color: rgba(38, 50, 56, 0.7);
+	clip-path: inset(0 0 0 35px);
+	text-align: left;
+	width: 100%;
+	height: 50vh;
+	margin: 0 15px;
+	overflow: scroll;
+	overflow-x: hidden;
+	
+}
+
+#tracks{
+	display: none;
+	
+}
+
+  ul{
 	text-align: left;
 	list-style: none;
 	position: relative;
-	line-height: 0.5em;
+	line-height:1.6em;
+	padding-left: 3em;
 	opacity: 1;
 	color: white;
+	box-shadow: 0 0.2em 0.1em rgba(0, 0, 0, 0.979);
 }
 
 ul:hover, svg:hover {
 	cursor: pointer;
 	color: rgba(198, 255, 0, 1);
+	transform: scale(1.1);
 	
 }
 
 ul.active{
 	color: rgba(198, 255, 0, 1);
 	font-weight: 600px;
+	
 }
-
-
- 
-svg {
-	color: rgba(198, 255, 0, 1);
-}
- 
 progress{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	left: 5%;
 	width: 90%;
 	margin: 0;
-	 
+	bottom: 5%;
 }
- 
-.timer-t,.timer-a {
-	width:50%;
-	position: relative;
-	top:10px;
-	left:0px;
-	text-align:left;
-	float:left;
-	color: rgba(198, 255, 0, 1);
-	font-weight: 600;
-}
-.volumen{
-	width:50%;
-	position: relative;
-	top:10px;
-	right:0px;
-	text-align:right;
-	float:left;
-	color: rgba(198, 255, 0, 1);
-	margin-bottom:20px;
-}
-/*#currentPlay{
-	color: rgba(198, 255, 0, 1);;
-	font-weight: 600;
-}*/
-  
+
 h4{
-	padding-top: -10px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding-top: 0;
+	padding-bottom: 0;
+	bottom: 5%;
+	padding: 0;
 	color: rgba(198, 255, 0, 1);;
 	margin:0px;
+	font-size: 1.5rem;
+	white-space: nowrap;
 }
 
-p {
-	color: white;
+
+.currentTrackName {
+    position: relative;
+    top: 20%;
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    font-size: 2em;
+    color: rgba(198, 255, 0, 1);
+    text-size-adjust: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-p a {
-	color: white;
-}
-
-p a:hover {
-	color: #ffffff;
-	font-weight: 600;
-}
-.tracks-box::-webkit-scrollbar{
-	scrollbar-color:black;
-}
-.tracks-box{
+ .espacio{
+	position: absolute;
+	background-color: blue;
+	height: 40%;
+	width: 100%;
+ }
+  .playlist-icon{
+	position:fixed;
+	width: 20px;
+	height: 10px;
 	
-	text-align: left;
-	height: 220px;
-	width: 	100%;
-	margin: 0 auto;
-	overflow: scroll;
-	overflow-x: hidden;
-}
-
-
-  .currentTrackName{
-	text-align: center;
-	color: rgba(255, 255, 255,1);
-	font-size: 30px;
-
   }
 
   .active {
 	color: rgba(198, 255, 0, 1);;
 	font-weight: bold;
+	text-decoration: solid underline; 
   }
 
-  button{
+svg {
+	color: rgba(198, 255, 0, 1);
+	
+}
+ 
+.timer{
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+	bottom: 7%;
+}
+
+.timer-t {
+    width: 45%;
+    display: flex;
+    color: rgba(198, 255, 0, 1);
+    font-weight: 600;
+	margin-left: 5%;
+}
+
+.timer-a {
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+    color: rgba(198, 255, 0, 1);
+    font-weight: 600;
+	margin-right: 5%;
+}
+
+
+	.volumen{
+		width:50%;
+		position: relative;
+		top:10px;
+		right:0px;
+		text-align:right;
+		float:left;
+		color: rgba(198, 255, 0, 1);
+		margin-bottom:20px;
+		font-size: 1.3rem;
+	}
+	#currentPlay{
+		color: rgba(198, 255, 0, 1);;
+		font-weight: 600;
+	}
+  
+
+.botones-control{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+button{
 	border: none;
 	background: none;
 	color: rgba(198, 255, 0, 1);
-	font-size: 8px;
-
+	font-size: 10px;
+	position: relative;
+		
   }
-#prev{
-	position:relative;
-}
+  #prev, #next, #play-pausa {
+	font-size: 20px;
+	margin: 0 10px;
+  }
 
- 
- 
+#prev:active {
+	transform: scale(0.90);
+	box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.24);
+	}
+#next:active {
+	transform: scale(0.90);
+	box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.24);
+	}
+#play-pausa:active {
+	transform: scale(0.90);
+	box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.24);
+	}
 
- 
-  
-  
+	#ver-ocultar:active {
+		transform: scale(0.90);
+		box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.24);
+		}
 
+		
 
- 
+		@media (min-width: 768px) and (max-width: 1199px){
+			#contenedor-one {
+				position: relative;
+				display: flex;
+				display: flex;
+   				align-items: center;
+				text-align: center;
+				width: 85%;
+				margin: 4% 4% 0;
+				left: 0px;
+				bottom: 80%;
+				top: 0;
+			  }
+
+			#album-image {
+				max-width: 100%;
+				 
+				
+			  }
+			 
+
+			  h4 {
+				font-size: 2rem;
+			  }
+			  
+			  .currentTrackName {
+				font-size: 2em;
+				width: 80%;
+			  }
+			  #prev, #next, #play-pausa {
+				font-size: 1em;
+				margin: 0 2px;
+			  }
+
+			  .botones-control{
+				display: flex;
+			  	justify-content: center;
+			  	align-items: center;
+			}
+
+			.volumen{
+				display: flex;
+			  	justify-content: left;
+				position: relative;
+				top:5%;
+				left:0;
+				color: rgba(198, 255, 0, 1);
+				margin-bottom:2px;
+				font-size: 1.5rem;
+			}
+
+			button{
+				border: none;
+				background: none;
+				color: rgba(198, 255, 0, 1);
+				font-size: 1rem;
+				position: relative;
+									
+			  }
+
+			  #ver-ocultar{
+				color: rgba(200, 255, 0, 0.582);
+				position: relative;
+				margin: 0;
+				padding: 0;
+				padding-top: 1px;
+				padding-bottom: 0em;
+				left:15%;
+				font-size: 3rem;
+			}
+			#volumen{
+				width: 20vw;	
+			}
+			#controls {
+				border: 1px rgba(198, 255, 0, 1) solid;
+				border-radius: 10px;
+				background: rgba(38, 50, 56, 0.3);
+				opacity: 1;
+				justify-content: center;
+				position: absolute;
+				bottom: 0;
+				max-width: 100%;
+				width: 100%;
+				height: 100%;
+				
+				
+				
+			  }
+			
+			ul{
+				font-size: 1.7em;
+				display: inline-block;
+				text-align: left;
+				list-style: none;
+				position: relative;
+				line-height:1em;
+				padding-left: 1em;
+				opacity: 1;
+				color: white;
+				box-shadow: 0 0.2em 0.1em rgba(0, 0, 0, 0.979);
+				width: 100%;
+			}
+			
+			ul:hover, svg:hover {
+				cursor: pointer;
+				color: rgba(198, 255, 0, 1);
+				transform: none;	
+				
+			}
+			
+			ul.active{
+				color: rgba(198, 255, 0, 1);
+				font-weight: normal;
+				
+				
+			}
+
+			
+			.tracks{
+				
+				display: flex;
+				flex-direction: row;
+				
+			}
+
+			.tracks-box{
+				font-size: 1em;
+				margin-top: 0;
+				position:absolute;
+				left: 0;
+				bottom: 0;
+				top: 100%;
+				background-color: rgba(38, 50, 56, 0.7);
+				clip-path: inset(0 0 0 0px);
+				text-align: left;
+				width: 100%;
+				height: 20vh;
+				margin: 0 1px;
+				overflow: scroll;
+				overflow-x: hidden;
+				
+			}
+
+		  }
+
+		
+
+		  @media (max-width: 767px) { 
+			#contenedor-one {
+			position: relative;
+			display: flex;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			width: 90%;
+			margin: 4% 4% 0;
+			left: 0px;
+			bottom: 80%;
+			top: 0;
+		  }
+
+		  #album-image {
+			max-width: 100%;
+			 
+			
+		  }
+		 
+
+		  h4 {
+			font-size: 2rem;
+		  }
+		  
+		  .currentTrackName {
+			font-size: 2em;
+			width: 80%;
+		  }
+		  #prev, #next, #play-pausa {
+			font-size: 1em;
+			margin: 0 2px;
+		  }
+
+		  .botones-control{
+			display: flex;
+			  justify-content: center;
+			  align-items: center;
+		}
+
+		.volumen{
+			display: flex;
+			  justify-content: left;
+			position: relative;
+			top:5%;
+			left:0;
+			color: rgba(198, 255, 0, 1);
+			margin-bottom:2px;
+			font-size: 1.5rem;
+		}
+
+		button{
+			border: none;
+			background: none;
+			color: rgba(198, 255, 0, 1);
+			font-size: 1rem;
+			position: relative;
+								
+		  }
+
+		  #ver-ocultar{
+			color: rgba(200, 255, 0, 0.582);
+			position: relative;
+			margin: 0;
+			padding: 0;
+			padding-top: 1px;
+			padding-bottom: 0em;
+			left:15%;
+			font-size: 3rem;
+		}
+		#volumen{
+			width: 20vw;	
+		}
+		#controls {
+			border: 1px rgba(198, 255, 0, 1) solid;
+			border-radius: 10px;
+			background: rgba(38, 50, 56, 0.3);
+			opacity: 1;
+			justify-content: center;
+			position: absolute;
+			bottom: 0;
+			max-width: 100%;
+			width: 100%;
+			height: 100%;
+			
+			
+			
+		  }
+		
+		ul{
+			font-size: 1.7em;
+			display: inline-block;
+			text-align: left;
+			list-style: none;
+			position: relative;
+			line-height:1em;
+			padding-left: 1em;
+			opacity: 1;
+			color: white;
+			box-shadow: 0 0.2em 0.1em rgba(0, 0, 0, 0.979);
+			width: 100%;
+		}
+		
+		ul:hover, svg:hover {
+			cursor: pointer;
+			color: rgba(198, 255, 0, 1);
+			transform: none;	
+			
+		}
+		
+		ul.active{
+			color: rgba(198, 255, 0, 1);
+			font-weight: normal;
+			
+			
+		}
+
+		
+		.tracks{
+			
+			display: flex;
+			flex-direction: row;
+			
+		}
+
+		.tracks-box{
+			font-size: 1em;
+			margin-top: 0;
+			position:absolute;
+			left: 0;
+			bottom: 0;
+			top: 100%;
+			background-color: rgba(38, 50, 56, 0.7);
+			clip-path: inset(0 0 0 0px);
+			text-align: left;
+			width: 100%;
+			height: 20vh;
+			margin: 0 1px;
+			overflow: scroll;
+			overflow-x: hidden;
+			
+		}}
