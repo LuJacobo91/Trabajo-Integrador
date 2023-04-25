@@ -36,7 +36,7 @@ fetch(apiUrl + 'tracks/?client_id=' + clientId + '&format=json&limit=20&fuzzytag
             const trackImage = document.createElement('div'); // crea elementos de imagenes 
             trackImage.src = track.album_image; // carga las imagenes de los albumes de las canciones en la lista de canciones :: OK
 
-      trackElement.addEventListener('click', () => { // Escucha el evento de click en la lista de canciones :: OK
+        trackElement.addEventListener('click', () => { // Escucha el evento de click en la lista de canciones :: OK
         updateActiveClick(trackElement); // Marcar la cancion activa en la lista al seleccionar con click :: OK
         loadAndPlayTrack(track);         // Carga y reproduce la canción seleccionada y actualiza la información :: OK
         
@@ -256,13 +256,13 @@ function cambiarPosicion() {
     contenedorOne.style.right = "";
 
   }
-  if (window.innerWidth <= 480) {
+  else if (window.innerWidth <= 480) {
      contenedorOne.style.left = "";
     contenedorOne.style.right = "";
 
   }
 
-  if (tracksVisible) {
+  else if (tracksVisible) {
    
     contenedorOne.style.right = "20%";
   } else {
