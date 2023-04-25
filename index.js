@@ -238,7 +238,7 @@ function mostrarOcultar() {
 }
 
 
-// Obtener el elemento que muestra u oculta la lista de canciones :: OK
+// Obtener el botón que muestra/oculta la lista de canciones :: OK
 var verOcultar = document.getElementById("ver-ocultar");
 
 // Obtener el contenedor que se va a mover :: OK
